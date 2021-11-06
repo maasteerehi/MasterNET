@@ -15,9 +15,9 @@ ShellBot.username
 fun_menu() {
     [[ "${message_from_id[$id]}" == "$id_admin" ]] && {
         local env_msg
-        env_msg="   •----------------------------------------------------•\n"
+        env_msg="•----------------------------------------------------•\n"
         env_msg+="<b>                 MASTER NET                 </b>\n"
-        env_msg+="   •----------------------------------------------------•\n\n"
+        env_msg+="•----------------------------------------------------•\n\n"
         env_msg+="⚠️ <i>SELECIONE UMA OPCAO ABAIXO !</i>\n\n"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} --text "$env_msg" \
             --reply_markup "$keyboard1" \
@@ -31,9 +31,9 @@ fun_menu() {
     }
     if [[ "$(grep -w "${message_from_username}" $ativos | grep -wc 'revenda')" != '0' ]]; then
         local env_msg
-        env_msg="   •----------------------------------------------------•\n"
+        env_msg="•----------------------------------------------------•\n"
         env_msg+="<b>                 MASTER NET                 </b>\n"
-        env_msg+="   •----------------------------------------------------•\n\n"
+        env_msg+="•----------------------------------------------------•\n\n"
         env_msg+="⚠️ <i>SELECIONE UMA OPCAO ABAIXO !</i>\n\n"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} --text "$env_msg" \
             --reply_markup "$keyboard2" \
@@ -41,9 +41,9 @@ fun_menu() {
         return 0
     elif [[ "$(grep -w "${message_from_username}" $ativos | grep -wc 'subrevenda')" != '0' ]]; then
         local env_msg
-        env_msg="   •----------------------------------------------------•\n"
+        env_msg="•----------------------------------------------------•\n"
         env_msg+="<b>                 MASTER NET                 </b>\n"
-        env_msg+="   •----------------------------------------------------•\n\n"
+        env_msg+="•----------------------------------------------------•\n\n"
         env_msg+="⚠️ <i>SELECIONE UMA OPCAO ABAIXO !</i>\n\n"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} --text "$env_msg" \
             --reply_markup "$keyboard3" \
@@ -66,9 +66,9 @@ fun_ajuda() {
     }
     if [[ "$id_chatuser" = "$id_admin" ]]; then
         local env_msg
-        env_msg="   •----------------------------------------------------•\n"
-        env_msg+="<b>                 MASTER NET                 </b>\n"
-        env_msg+="   •----------------------------------------------------•\n\n"
+        env_msg="•----------------------------------------------------•\n"
+        env_msg+="<b>                  MASTER NET                  </b>\n"
+        env_msg+="•----------------------------------------------------•\n\n"
         env_msg+="⚠️ <i>Comandos Disponiveis</i>\n\n"
         env_msg+="[<b>01</b>] /menu = Exibe menu\n"
         env_msg+="[<b>02</b>] /info = Exibe informacoes\n"
@@ -102,9 +102,9 @@ fun_ajuda() {
         return 0
     elif [[ "$(grep -w "$id_name" $ativos | awk '{print $NF}')" == 'revenda' ]]; then
         local env_msg
-        env_msg="   •----------------------------------------------------•\n"
+        env_msg="•----------------------------------------------------•\n"
         env_msg+="<b>                 MASTER NET                 </b>\n"
-        env_msg+="   •----------------------------------------------------•\n\n"
+        env_msg+="•----------------------------------------------------•\n\n"
         env_msg+="⚠️ <i>Comandos Disponiveis</i>\n\n"
         env_msg+="[<b>01</b>] /menu = Exibe menu\n"
         env_msg+="[<b>02</b>] /info = Exibe informacoes\n"
@@ -128,9 +128,9 @@ fun_ajuda() {
         return 0
     elif [[ "$(grep -w "$id_name" $ativos | awk '{print $NF}')" == 'subrevenda' ]]; then
         local env_msg
-        env_msg="   •----------------------------------------------------•\n"
+        env_msg="•----------------------------------------------------•\n"
         env_msg+="<b>                 MASTER NET                 </b>\n"
-        env_msg+="   •----------------------------------------------------•\n\n"
+        env_msg+="•----------------------------------------------------•\n\n"
         env_msg+="⚠️ <i>Comandos Disponiveis</i>\n\n"
         env_msg+="[<b>01</b>] /menu = Exibe menu\n"
         env_msg+="[<b>02</b>] /info = Exibe informacoes\n"
@@ -429,9 +429,9 @@ ver_users() {
     if [[ "${callback_query_from_id[$id]}" == "$id_admin" ]]; then
         arq_info=/tmp/$(echo $RANDOM)
         local info_users
-        info_users='   •----------------------------------------------------•\n'
+        info_users='•----------------------------------------------------•\n'
         info_users+='<b>INFORMACOES DOS USUARIOS</b>\n'
-        info_users+='   •----------------------------------------------------•\n\n'
+        info_users+='•----------------------------------------------------•\n\n'
         info_users+='⚠️ Exibe no formato abaixo:\n\n'
         info_users+='<code>USUÁRIO SENHA LIMITE DATA</code>\n'
         ShellBot.sendMessage --chat_id $id_admin \
@@ -481,9 +481,9 @@ ver_users() {
         }
         arq_info=/tmp/$(echo $RANDOM)
         local info_users
-        info_users='   •----------------------------------------------------•\n'
+        info_users='•----------------------------------------------------•\n'
         info_users+='<b>INFORMACOES DOS USUARIOS</b>\n'
-        info_users+='   •----------------------------------------------------•\n\n'
+        info_users+='•----------------------------------------------------•\n\n'
         info_users+='⚠️ Exibe no formato abaixo:\n\n'
         info_users+='<code>USUÁRIO SENHA LIMITE DATA</code>\n'
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
@@ -562,9 +562,9 @@ monitor_ssh() {
         database="/root/usuarios.db"
         cad_onli=/tmp/$(echo $RANDOM)
         local info_on
-        info_on='   •----------------------------------------------------•\n'
+        info_on='•----------------------------------------------------•\n'
         info_on+='<b>MONITOR USUARIOS ONLINES</b>\n'
-        info_on+='   •----------------------------------------------------•\n\n'
+        info_on+='•----------------------------------------------------•\n\n'
         info_on+='⚠️ Exibe no formato abaixo:\n\n'
         info_on+='<code>USUÁRIO  ONLINE/LIMITE  TEMPO\n</code>'
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
@@ -619,9 +619,9 @@ monitor_ssh() {
         database="/root/usuarios.db"
         cad_onli=/tmp/$(echo $RANDOM)
         local info_on
-        info_on='   •----------------------------------------------------•\n'
+        info_on='•----------------------------------------------------•\n'
         info_on+='<b>MONITOR USUARIOS ONLINES</b>\n'
-        info_on+='   •----------------------------------------------------•\n\n'
+        info_on+='•----------------------------------------------------•\n\n'
         info_on+='⚠️ Exibe no formato abaixo:\n\n'
         info_on+='<code>USUÁRIO  ONLINE/LIMITE  TEMPO\n</code>'
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
@@ -734,9 +734,9 @@ infovps() {
     [[ "$(netstat -nltp | grep 'dropbear' | wc -l)" != '0' ]] && echo -e "DropBear: $(netstat -nplt | grep 'dropbear' | awk -F ":" {'print $4'} | xargs)" >>$PTs
     [[ "$(netstat -nplt | grep 'python' | wc -l)" != '0' ]] && echo -e "Proxy Socks: $(netstat -nplt | grep 'python' | awk {'print $4'} | cut -d: -f2 | xargs)" >>$PTs
     local info
-    info="   •----------------------------------------------------•\n"
+    info="•----------------------------------------------------•\n"
     info+="<b>INFORMACOES DO SERVIDOR</b>\n"
-    info+="   •----------------------------------------------------•\n\n"
+    info+="•----------------------------------------------------•\n\n"
     info+="<b>SISTEMA OPERACIONAL</b>\n"
     info+="$system\n\n"
     info+="<b>PROCESSADOR</b>\n"
@@ -813,9 +813,9 @@ otimizer() {
     MEM2=$(free | awk '/Mem:/ {print int(100*$3/$2)}')
     res=$(expr $MEM1 - $MEM2)
     local sucess
-    sucess="   •----------------------------------------------------•\n"
+    sucess="•----------------------------------------------------•\n"
     sucess+="<b>OTIMIZADO COM SUCESSO !</b>\n"
-    sucess+="   •----------------------------------------------------•\n\n"
+    sucess+="•----------------------------------------------------•\n\n"
     sucess+="<i>Ultilizacao anterior</i> $MEM1%\n\n"
     sucess+="<b>Memoria Ram Total</b> $ram1\n"
     sucess+="<b>livre</b> $ram3\n"
@@ -843,9 +843,9 @@ speed_test() {
     upl=$(cat speed | sed -n '9 p' | awk -F : {'print $NF'})
     lnk=$(cat speed | sed -n '10 p' | awk {'print $NF'})
     local msg
-    msg="   •----------------------------------------------------•\n"
+    msg="•----------------------------------------------------•\n"
     msg+="<b>🚀 VELOCIDADE DO SERVIDOR 🚀</b>\n"
-    msg+="   •----------------------------------------------------•\n\n"
+    msg+="•----------------------------------------------------•\n\n"
     msg+="<b>PING/LATENCIA:</b>$png\n"
     msg+="<b>DOWNLOAD:</b>$down\n"
     msg+="<b>UPLOAD:</b>$upl\n"
@@ -877,9 +877,9 @@ backup_users() {
 
 sobremim() {
     local msg
-    msg="   •----------------------------------------------------•\n"
+    msg="•----------------------------------------------------•\n"
     msg+="<b>🤖 MASTER NET MANAGER 🤖</b>\n"
-    msg+="   •----------------------------------------------------•\n\n"
+    msg+="•----------------------------------------------------•\n\n"
     msg+="<b>Desenvolvido por:</b> @vps_manager\n"
     msg+="<b>Canal Oficial:</b> @VPSMANAGER\n\n"
     msg+="Fui criado com o propósito de fornecer informações e ferramentas para gestão VPN em servidores 🐧 GNU/Linux 🐧.\n\n"
@@ -1052,9 +1052,9 @@ relatorio_rev() {
         _cont_sub=$(grep -wc subrevenda $ativos)
         _cont_revt=$(grep -wc revenda $ativos)
         local msg
-        msg="   •----------------------------------------------------•\n"
+        msg="•----------------------------------------------------•\n"
         msg+="<b>📊 RELATORIO | INFORMACOES</b>\n"
-        msg+="   •----------------------------------------------------•\n\n"
+        msg+="•----------------------------------------------------•\n\n"
         msg+="<b>Usuarios total:</b> $_tuser\n"
         msg+="<b>Usuarios online:</b> $_onli\n"
         msg+="<b>Revendas Ativas:</b> $_cont_rev\n"
@@ -1070,7 +1070,7 @@ relatorio_rev() {
                 --text "⚠️ NENHUM REVENDEDOR ENCONTRADO !"
             return 0
         }
-        echo -e "RELATORIO DOS REVENDEDORES\n\nTotal: $_cont_revt  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n   •----------------------------------------------------•×=×=" >/tmp/Relatorio.txt
+        echo -e "RELATORIO DOS REVENDEDORES\n\nTotal: $_cont_revt  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n•----------------------------------------------------•×=×=" >/tmp/Relatorio.txt
         while read _revlist; do
             _nome_rev="$(echo $_revlist | awk '{print $2}')"
             _limite_rev="$(echo $_revlist | awk '{print $4}')"
@@ -1099,7 +1099,7 @@ relatorio_rev() {
                 total_on='0'
                 total_users='0'
             }
-            echo -e "\nSTATUS: $_status\nREVENDEDOR: @$_nome_rev\nLIMITE: $_limite_rev\nDIAS RESTANTES: $_data_rev\nSSH CRIADAS: $total_users\nSSH ONLINE: $total_on\nSUB-REVENDAS: $_subrev\n\n   •----------------------------------------------------•×=×=" >>/tmp/Relatorio.txt
+            echo -e "\nSTATUS: $_status\nREVENDEDOR: @$_nome_rev\nLIMITE: $_limite_rev\nDIAS RESTANTES: $_data_rev\nSSH CRIADAS: $total_users\nSSH ONLINE: $total_on\nSUB-REVENDAS: $_subrev\n\n•----------------------------------------------------•×=×=" >>/tmp/Relatorio.txt
         done <<<"$(grep -w 'revenda' $ativos)"
         ShellBot.sendDocument --chat_id $id_admin \
             --document "@/tmp/Relatorio.txt" \
@@ -1119,9 +1119,9 @@ relatorio_rev() {
             fun_verif_limite_rev ${callback_query_from_username}
             _cont_disp=$(echo $_cont_limite - $_result | bc)
             local msg
-            msg="   •----------------------------------------------------•\n"
+            msg="•----------------------------------------------------•\n"
             msg+="<b>📊 RELATORIO | INFORMACOES</b>\n"
-            msg+="   •----------------------------------------------------•\n\n"
+            msg+="•----------------------------------------------------•\n\n"
             msg+="<b>Limite de Logins:</b> $_cont_limite\n"
             msg+="<b>Limite Disponivel:</b> $_cont_disp\n"
             ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
@@ -1141,16 +1141,16 @@ relatorio_rev() {
         _cont_atv=$(grep -wc SUBREVENDA /etc/bot/revenda/${callback_query_from_username}/${callback_query_from_username})
         _cont_sup=$(fun_contsub | paste -s -d + | bc)
         local msg
-        msg="   •----------------------------------------------------•\n"
+        msg="•----------------------------------------------------•\n"
         msg+="<b>📊 RELATORIO | INFORMACOES</b>\n"
-        msg+="   •----------------------------------------------------•\n\n"
+        msg+="•----------------------------------------------------•\n\n"
         msg+="<b>Limite de Logins:</b> $_cont_limite\n"
         msg+="<b>Limite Disponivel:</b> $_cont_disp\n"
         msg+="<b>Sub-Revendas Total:</b> $_cont_atv\n"
         msg+="<b>Sub-Revendas Suspensas:</b> $_cont_sup\n"
         msg+="<b>User:</b> @${callback_query_from_username}\n"
         msg+="<b>ID:</b> <code>${callback_query_from_id}</code>\n"
-        echo -e "RELATORIO DOS SUB REVENDEDORES\n\nTotal: $_cont_atv  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n   •----------------------------------------------------•×=×=" >/tmp/Relatorio-${callback_query_from_username}.txt
+        echo -e "RELATORIO DOS SUB REVENDEDORES\n\nTotal: $_cont_atv  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n•----------------------------------------------------•×=×=" >/tmp/Relatorio-${callback_query_from_username}.txt
         while read _sublist; do
             _usub="$(echo $_sublist | awk '{print $2}')"
             _limit_sub=$(echo $_sublist | awk '{print $4}')
@@ -1178,7 +1178,7 @@ relatorio_rev() {
                 total_on='0'
                 total_users='0'
             }
-            echo -e "\nSTATUS: $_status\nSUB-REVENDEDOR: @$_usub\nLIMITE: $_limit_sub\nDIAS RESTANTES: $_data_sub\nSSH CRIADAS: $total_users\nSSH ONLINE: $total_on\n\n   •----------------------------------------------------•×=×=" >>/tmp/Relatorio-${callback_query_from_username}.txt
+            echo -e "\nSTATUS: $_status\nSUB-REVENDEDOR: @$_usub\nLIMITE: $_limit_sub\nDIAS RESTANTES: $_data_sub\nSSH CRIADAS: $total_users\nSSH ONLINE: $total_on\n\n•----------------------------------------------------•×=×=" >>/tmp/Relatorio-${callback_query_from_username}.txt
         done <<<"$(grep -w 'SUBREVENDA' /etc/bot/revenda/${callback_query_from_username}/${callback_query_from_username})"
         ShellBot.sendDocument --chat_id ${callback_query_message_chat_id[$id]} \
             --document "@/tmp/Relatorio-${callback_query_from_username}.txt" \
@@ -1572,7 +1572,7 @@ fun_list_rev() {
     }
     if [[ "${callback_query_from_id[$id]}" == "$id_admin" ]]; then
         local msg1
-        msg1="   •----------------------------------------------------•\n📃 LISTA DE REVENDEDORES !\n   •----------------------------------------------------•\n"
+        msg1="•----------------------------------------------------•\n📃 LISTA DE REVENDEDORES !\n•----------------------------------------------------•\n"
         [[ "$(grep -wc 'revenda' $ativos)" != '0' ]] && {
             while read _atvs; do
                 _uativ="$(echo $_atvs | awk '{print $2}')"
